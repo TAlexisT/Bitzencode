@@ -43,11 +43,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-100 relative overflow-hidden">
         {/* Elementos decorativos geométricos modernos */}
         <div className="absolute inset-0 -z-0">
-          {/* Formas geométricas abstractas */}
-          <div className="absolute top-10 left-5 w-20 h-20 bg-blue-400 rounded-3xl opacity-10 blur-xl transform rotate-12 animate-float"></div>
-          <div className="absolute top-20 right-10 w-16 h-16 bg-purple-500 rounded-full opacity-15 blur-lg animate-float delay-1000"></div>
-          <div className="absolute bottom-20 left-10 w-24 h-24 bg-cyan-400 opacity-10 blur-xl transform -rotate-12 animate-float delay-500"></div>
-          <div className="absolute bottom-10 right-20 w-12 h-12 bg-indigo-500 rounded-2xl opacity-20 blur-md animate-float delay-1500"></div>
+         
 
           {/* Líneas de conexión sutiles */}
           <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent opacity-30"></div>
@@ -74,7 +70,7 @@ export default function Home() {
                   tecnológicas que impulsan tu crecimiento.
                 </p>
 
-                <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed font-light">
+                <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed font-light">
                   Ya sea que necesites una página web, una app personalizada o
                   una integración avanzada, nuestro equipo está listo para
                   ayudarte.
@@ -82,34 +78,238 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Imagen - Derecha */}
+            {/* SVG Personalizado - Derecha */}
             <div className="lg:w-1/2 w-full relative">
-              {/* Contenedor de imagen con efecto glassmorphism */}
+              {/* Contenedor del SVG con efecto glassmorphism */}
               <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
                 {/* Efecto de brillo */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl opacity-5 blur-sm"></div>
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-gray-950 to-blue-950 opacity-10 rounded-3xl blur-sm"></div>
 
                 <div className="relative">
-                  <Image
-                    src="/images/transformer.png"
-                    alt="Transformamos ideas en soluciones digitales"
-                    width={600}
-                    height={400}
-                    className="w-full h-auto rounded-2xl shadow-lg transform hover:scale-[1.02] transition duration-500"
-                  />
+                  <svg
+                    viewBox="0 0 600 400"
+                    className="w-full h-auto rounded-2xl transform hover:scale-[1.02] transition duration-500"
+                  >
+                    {/* Fondo gradiente */}
+                    <defs>
+                    
 
-                  {/* Elementos decorativos flotantes alrededor de la imagen */}
-                  <div className="absolute -top-3 -right-3 w-6 h-6 bg-blue-500 rounded-full animate-bounce"></div>
-                  <div className="absolute -bottom-3 -left-3 w-14 h-14 bg-purple-500 rounded-full opacity-40 animate-pulse delay-1000"></div>
+                      <linearGradient
+                        id="ideaGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stopColor="#3b82f6" />
+                        <stop offset="100%" stopColor="#8b5cf6" />
+                      </linearGradient>
+
+                      <linearGradient
+                        id="codeGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stopColor="#10b981" />
+                        <stop offset="100%" stopColor="#06b6d4" />
+                      </linearGradient>
+                    </defs>
+
+                    {/* Fondo */}
+                    <rect
+                      width="600"
+                      height="400"
+                      fill="url(#bgGradient)"
+                      rx="20"
+                    />
+
+                    {/* Lado izquierdo: Idea (cerebro/luz) */}
+                    <g transform="translate(100, 120)">
+                      {/* Círculo de fondo para la idea */}
+                      <circle
+                        cx="0"
+                        cy="0"
+                        r="60"
+                        fill="url(#ideaGradient)"
+                        opacity="0.1"
+                      />
+
+                      {/* Bombillo/idea */}
+                      <path
+                        d="M -30 -40 Q 0 -60 30 -40 Q 40 -20 30 0 Q 20 20 0 30 Q -20 20 -30 0 Q -40 -20 -30 -40 Z"
+                        fill="url(#ideaGradient)"
+                        opacity="0.8"
+                      />
+
+                      {/* Luz que emana */}
+                      <path
+                        d="M -20 30 Q 0 50 20 30 Q 30 60 15 80 Q 0 70 -15 80 Q -30 60 -20 30 Z"
+                        fill="url(#ideaGradient)"
+                        opacity="0.3"
+                      />
+
+                      {/* Rayos de luz */}
+                      <g
+                        stroke="url(#ideaGradient)"
+                        strokeWidth="2"
+                        opacity="0.5"
+                      >
+                        <line x1="0" y1="40" x2="-40" y2="60" />
+                        <line x1="0" y1="40" x2="0" y2="70" />
+                        <line x1="0" y1="40" x2="40" y2="60" />
+                      </g>
+
+                      {/* Puntos de ideas */}
+                      <g fill="#3b82f6" opacity="0.6">
+                        <circle cx="-50" cy="-30" r="3" />
+                        <circle cx="-60" cy="10" r="2" />
+                        <circle cx="50" cy="-20" r="4" />
+                        <circle cx="40" cy="20" r="3" />
+                      </g>
+                    </g>
+
+                    {/* Línea de transformación (conexión) */}
+                    <g
+                      stroke="url(#ideaGradient)"
+                      strokeWidth="3"
+                      opacity="0.7"
+                    >
+                      <path
+                        d="M 200 200 C 250 150 350 150 400 200"
+                        fill="none"
+                        strokeDasharray="8,4"
+                      />
+
+                      {/* Puntos móviles en la línea */}
+                      <circle cx="250" cy="160" r="4" fill="#8b5cf6">
+                        <animate
+                          attributeName="cx"
+                          from="200"
+                          to="400"
+                          dur="3s"
+                          repeatCount="indefinite"
+                        />
+                      </circle>
+                      <circle cx="350" cy="160" r="3" fill="#3b82f6">
+                        <animate
+                          attributeName="cx"
+                          from="400"
+                          to="200"
+                          dur="2.5s"
+                          repeatCount="indefinite"
+                        />
+                      </circle>
+                    </g>
+
+                    {/* Lado derecho: Código/Solución */}
+                    <g transform="translate(400, 120)">
+                      {/* Círculo de fondo para el código */}
+                      <circle
+                        cx="0"
+                        cy="0"
+                        r="60"
+                        fill="url(#codeGradient)"
+                        opacity="0.1"
+                      />
+
+                      {/* Ventana de código */}
+                      <rect
+                        x="-50"
+                        y="-40"
+                        width="100"
+                        height="80"
+                        rx="10"
+                        fill="white"
+                        stroke="url(#codeGradient)"
+                        strokeWidth="2"
+                      />
+
+                      {/* Barra de título */}
+                      <rect
+                        x="-50"
+                        y="-40"
+                        width="100"
+                        height="15"
+                        rx="10"
+                        fill="url(#codeGradient)"
+                        opacity="0.8"
+                      />
+
+                      {/* Botones de ventana */}
+                      <g fill="white" opacity="0.8">
+                        <circle cx="-35" cy="-33" r="3" />
+                        <circle cx="-25" cy="-33" r="3" />
+                        <circle cx="-15" cy="-33" r="3" />
+                      </g>
+
+                      {/* Líneas de código */}
+                      <g fill="#1f2937" fontFamily="monospace" fontSize="6">
+                        <text x="-45" y="-20">
+                          &lt;div className="solution"&gt;
+                        </text>
+                        <text x="-40" y="-10">
+                          {" "}
+                          &lt;Innovation /&gt;
+                        </text>
+                        <text x="-40" y="0">
+                          {" "}
+                          &lt;Technology /&gt;
+                        </text>
+                        <text x="-40" y="10">
+                          {" "}
+                          &lt;Results /&gt;
+                        </text>
+                        <text x="-45" y="20">
+                          &lt;/div&gt;
+                        </text>
+                      </g>
+
+                      {/* Efecto de brillo en el código */}
+                      <rect
+                        x="-50"
+                        y="-25"
+                        width="100"
+                        height="50"
+                        rx="10"
+                        fill="url(#codeGradient)"
+                        opacity="0.05"
+                      />
+                    </g>
+
+                    {/* Flecha de transformación */}
+                    <g transform="translate(300, 200)">
+                      <path
+                        d="M -10 -5 L 0 5 L 10 -5 Z"
+                        fill="url(#ideaGradient)"
+                      />
+                    </g>
+
+                    {/* Texto descriptivo */}
+                    <g
+                      fontFamily="sans-serif"
+                      textAnchor="middle"
+                      fill="#374151"
+                    >
+                      <text x="150" y="250" fontSize="18" fontWeight="bold">
+                        Idea Creativa
+                      </text>
+                      <text x="450" y="250" fontSize="18" fontWeight="bold">
+                        Solución Digital
+                      </text>
+                      <text x="300" y="280" fontSize="14" fill="#6b7280">
+                        Proceso de Transformación
+                      </text>
+                    </g>
+                  </svg>
+
+                  {/* Elementos decorativos flotantes alrededor del SVG */}
+                  <div className="absolute -bottom-3 -left-3 w-14 h-14 bg-purple-200 rounded-full opacity-20 animate-pulse delay-1000"></div>
                 </div>
               </div>
 
-              <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">100%</div>
-                  <div className="text-sm text-gray-600">Satisfacción</div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -119,7 +319,7 @@ export default function Home() {
       <section className="py-16 md:py-20 bg-gray-200 relative overflow-hidden">
         {/* Elementos decorativos de fondo */}
         <div className="absolute inset-0 -z-0">
-          <div className="absolute top-0 left-0 w-72 h-72 bg-blue-100 rounded-full opacity-40 blur-3xl"></div>
+          <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full opacity-40 blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-100 rounded-full opacity-30 blur-3xl"></div>
           <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-green-100 rounded-full opacity-20 blur-2xl"></div>
         </div>
@@ -234,25 +434,27 @@ export default function Home() {
 
           {/* Botón CTA */}
           <div className="text-center">
-            <button className="group bg-gradient-to-r from-blue-700 to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden cursor-pointer">
-              <span className="relative z-10 flex items-center justify-center">
-                Conoce más
-                <svg
-                  className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </span>
-              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            </button>
+            <Link href="/servicios">
+              <button className="group bg-gradient-to-r from-blue-700 to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden cursor-pointer">
+                <span className="relative z-10 flex items-center justify-center">
+                  Conoce más
+                  <svg
+                    className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -303,26 +505,28 @@ export default function Home() {
 
             {/* Botones de acción */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              {/* Botón Portafolio */}
-              <button className="group bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl relative overflow-hidden w-full sm:w-auto cursor-pointer">
-                <span className="relative z-10 flex items-center justify-center">
-                  Ver Portafolio
-                  <svg
-                    className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-30 group-hover:opacity-10 transition-opacity duration-300"></div>
-              </button>
+              <Link href="/proyectos">
+                {/* Botón Portafolio */}
+                <button className="group bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl relative overflow-hidden w-full sm:w-auto cursor-pointer">
+                  <span className="relative z-10 flex items-center justify-center">
+                    Ver Portafolio
+                    <svg
+                      className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-30 group-hover:opacity-10 transition-opacity duration-300"></div>
+                </button>
+              </Link>
 
               {/* Botón Contactar */}
               <Link href="/contacto">
@@ -395,14 +599,14 @@ export default function Home() {
             {/* Testimonio 1 - Carlos Rivas */}
             <div className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group relative">
               {/* Elemento decorativo */}
-              <div className="absolute -top-3 -left-3 w-6 h-6 bg-blue-500 rounded-full opacity-80"></div>
-              <div className="absolute -bottom-3 -right-3 w-8 h-8 bg-purple-500 rounded-full opacity-60"></div>
+              <div className="absolute -top-3 -left-3 w-6 h-6 bg-blue-500 rounded-full opacity-20"></div>
+              <div className="absolute -bottom-3 -right-3 w-8 h-8 bg-purple-500 rounded-full opacity-20"></div>
 
               <div className="relative z-10">
                 {/* Cita */}
                 <div className="mb-6">
                   <svg
-                    className="w-12 h-12 text-blue-400 opacity-30 mb-4"
+                    className="w-12 h-12 text-gray-400 opacity-30 mb-4"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -429,7 +633,7 @@ export default function Home() {
                     </div>
                   </div>
                   {/* Avatar placeholder */}
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-16 h-16 text-black bg-white rounded-full flex items-center justify-center border border-gray-200 font-bold text-lg">
                     CR
                   </div>
                 </div>
@@ -439,14 +643,14 @@ export default function Home() {
             {/* Testimonio 2 - Luis Peña */}
             <div className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group relative">
               {/* Elemento decorativo */}
-              <div className="absolute -top-3 -right-3 w-6 h-6 bg-green-500 rounded-full opacity-80"></div>
-              <div className="absolute -bottom-3 -left-3 w-8 h-8 bg-yellow-500 rounded-full opacity-60"></div>
+              <div className="absolute -top-3 -right-3 w-6 h-6 bg-green-500 rounded-full opacity-20"></div>
+              <div className="absolute -bottom-3 -left-3 w-8 h-8 bg-yellow-500 rounded-full opacity-20"></div>
 
               <div className="relative z-10">
                 {/* Cita */}
                 <div className="mb-6">
                   <svg
-                    className="w-12 h-12 text-green-400 opacity-30 mb-4"
+                    className="w-12 h-12 text-gray-400 opacity-30 mb-4"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -474,7 +678,7 @@ export default function Home() {
                     </div>
                   </div>
                   {/* Avatar placeholder */}
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-16 h-16 text-black bg-white rounded-full flex items-center justify-center border border-gray-200 font-bold text-lg">
                     LP
                   </div>
                 </div>

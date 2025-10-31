@@ -46,7 +46,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="/portafolio"
+                href="/proyectos"
                 className="text-white hover:text-gray-300 transition duration-200 text-base whitespace-nowrap"
               >
                 Portafolio
