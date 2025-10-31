@@ -1,22 +1,28 @@
 // components/Footer.tsx
 import Image from "next/image";
+import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-8">
       <div className="container mx-auto px-4">
         {/* Logo/Título centrado */}
-        <div className="flex items-center justify-center text-center mb-6">
-          <div>
-            <Image
-              src="/icons/BitLogo.svg"
-              alt="Bitzencode Logo"
-              width={40}
-              height={40}
-              className="object-contain"
-            />
-          </div>
 
-          <h2 className="text-3xl font-bold tracking-tight">Bitzencode</h2>
+        <div className="flex items-center justify-center text-center mb-6">
+          <Link href="/">
+            <div>
+              <Image
+                src="/icons/BitLogo.svg"
+                alt="Bitzencode Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+            </div>
+          </Link>
+
+          <Link href="/">
+            <h2 className="text-3xl font-bold tracking-tight">Bitzencode</h2>
+          </Link>
         </div>
 
         {/* Navegación - espaciado responsivo */}
